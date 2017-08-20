@@ -104,7 +104,8 @@ class Callinfo(object):
 
     @staticmethod
     def check_if_am(callsign):
-        if re.search("/AM$", callsign.upper()):
+        check = callsign[-3].upper()
+        if "/AM" in check:
             return True
         else:
             return False
