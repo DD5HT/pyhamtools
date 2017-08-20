@@ -96,7 +96,8 @@ class Callinfo(object):
 
     @staticmethod
     def check_if_mm(callsign):
-        if re.search("/MM$", callsign.upper()):
+        check = callsign[-3].upper()
+        if "/MM" in check:
             return True
         else:
             return False
