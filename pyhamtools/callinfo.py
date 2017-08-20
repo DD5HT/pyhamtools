@@ -110,11 +110,12 @@ class Callinfo(object):
 
     @staticmethod
     def check_if_beacon(callsign):
-        if re.search("/B$", callsign.upper()):
+        check = callsign[-4].upper()
+        if "/B" in check:
             return True
-        elif re.search("/BCN$", callsign.upper()):
+        elif "/BNC" in check:
             return True
-        else:
+        else: 
             return False
 
     def _dismantle_callsign(self, callsign, timestamp=timestamp_now):
