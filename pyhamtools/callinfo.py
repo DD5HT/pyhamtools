@@ -97,28 +97,17 @@ class Callinfo(object):
     @staticmethod
     def check_if_mm(callsign):
         check = callsign[-3].upper()
-        if "/MM" in check:
-            return True
-        else:
-            return False
+        return "/MM" in check
 
     @staticmethod
     def check_if_am(callsign):
         check = callsign[-3].upper()
-        if "/AM" in check:
-            return True
-        else:
-            return False
-
+        return "/AM" in check
+        
     @staticmethod
     def check_if_beacon(callsign):
         check = callsign[-4].upper()
-        if "/B" in check:
-            return True
-        elif "/BNC" in check:
-            return True
-        else: 
-            return False
+        return "/B" in check or "/BNC" in check
 
     def _dismantle_callsign(self, callsign, timestamp=timestamp_now):
         """ try to identify the callsign's identity by analyzing it in the following order:
